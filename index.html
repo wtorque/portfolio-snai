@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>HARSHH — Software Engineer & Product Builder | Personal Portfolio</title>
+  
+  <!-- SEO & Metadata -->
+  <meta name="description" content="Personal portfolio of Harshh. Software engineer, product builder, and Rackyard Core Team member based in India. Building scalable, reliable digital systems.">
+  <meta name="author" content="Harshh (wtorque)">
+  <meta name="keywords" content="Harshh, wtorque, Software Engineer, Product Builder, Next.js, Node.js, TypeScript, PostgreSQL, System Design, Rackyard, India">
+  <meta name="theme-color" content="#F5F3ED">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="HARSHH — Software Engineer & Product Builder">
+  <meta property="og:description" content="Based in India, building digital products that solve real problems. Core Team at Rackyard.">
+  <meta property="og:url" content="https://harshh.pro">
+  <meta property="og:site_name" content="HARSHH">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HARSHH — Software Engineer & Product Builder">
+  <meta name="twitter:description" content="Minimal Swiss / Editorial Portfolio. Software Engineer & Product Builder based in India.">
+
+  <!-- Typography: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+
+  <!-- ========================================================================
+       Opening Animation — Handwritten "hello" in Pure SVG Stroke Animation
+       ======================================================================== -->
+  <div id="intro-overlay" aria-hidden="true">
+    <div class="intro-content">
+      <svg class="intro-svg" viewBox="0 0 540 220" preserveAspectRatio="xMidYMid meet">
+        <!-- Letter 'h' -->
+        <path id="path-h" d="M 45 165 C 65 145, 95 80, 115 30 C 125 6, 142 8, 138 35 C 132 68, 104 125, 92 178 C 96 160, 106 130, 124 110 C 138 95, 158 95, 164 112 C 170 128, 166 155, 160 175 C 162 178, 168 180, 176 175" />
+        <!-- Letter 'e' -->
+        <path id="path-e" d="M 176 175 C 188 160, 206 122, 218 112 C 226 105, 212 105, 198 120 C 185 135, 186 158, 200 172 C 210 180, 226 178, 246 145" />
+        <!-- Letter 'l1' -->
+        <path id="path-l1" d="M 246 145 C 265 118, 298 58, 318 24 C 328 6, 344 8, 338 35 C 330 72, 305 130, 295 178 C 298 182, 310 182, 322 170 C 334 158, 346 142, 356 128" />
+        <!-- Letter 'l2' -->
+        <path id="path-l2" d="M 356 128 C 375 102, 405 48, 425 20 C 435 4, 450 6, 444 32 C 436 68, 412 130, 402 178 C 405 182, 416 182, 428 170 C 438 158, 446 142, 454 128" />
+        <!-- Letter 'o' -->
+        <path id="path-o" d="M 454 128 C 462 116, 474 108, 488 108 C 470 108, 456 126, 456 148 C 456 168, 470 182, 488 182 C 508 182, 520 166, 520 144 C 520 122, 506 108, 488 108 C 498 108, 508 115, 510 124 C 512 130, 506 135, 498 132 C 506 130, 520 125, 545 120" />
+      </svg>
+    </div>
+    <button class="intro-skip-btn" id="skip-intro-btn" type="button" aria-label="Skip introductory animation">
+      [ SKIP INTRO ↵ ]
+    </button>
+  </div>
+
+  <!-- ========================================================================
+       Header & Navigation
+       ======================================================================== -->
+  <header class="site-header" id="navbar">
+    <div class="container nav-container">
+      <!-- Brand -->
+      <a href="#top" class="nav-brand" aria-label="Harshh Home">
+        HARSHH<sup>®</sup>
+      </a>
+
+      <!-- Center Numbered Nav Links -->
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="#about"><span class="num">[ 01 ]</span> ABOUT</a>
+        <a href="#projects"><span class="num">[ 02 ]</span> PROJECTS</a>
+        <a href="#contact"><span class="num">[ 03 ]</span> CONTACT</a>
+        <a href="#contact"><span class="num">[ 04 ]</span> LET'S TALK</a>
+      </nav>
+
+      <!-- Right Nav Actions -->
+      <div class="nav-actions">
+        <!-- Available for work status -->
+        <div class="status-pill" title="Currently open for select engineering roles & collaborations">
+          <span class="status-dot"></span>
+          <span>AVAILABLE FOR WORK</span>
+        </div>
+
+        <!-- Message Pill Button -->
+        <a href="mailto:wtorque@outlook.com" class="pill-btn" aria-label="Send Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+          <span>MESSAGE</span>
+        </a>
+
+        <!-- GitHub Stars Pill Button -->
+        <a href="https://github.com/wtorque" target="_blank" rel="noopener noreferrer" class="pill-btn" aria-label="GitHub Profile">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+          </svg>
+          <span id="nav-star-count">5</span>
+        </a>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button class="menu-toggle" id="menu-toggle-btn" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ======================================================================
+         Hero Section (Exact Visual Reference Alignment)
+         ====================================================================== -->
+    <section class="hero-section container" aria-label="Hero Introduction">
+      <div class="hero-grid">
+        
+        <!-- Left Column -->
+        <div class="hero-left">
+          <div class="hero-micro-tag mono-micro">
+            [ SOFTWARE / PRODUCT / SYSTEMS ]
+          </div>
+          
+          <h1 class="hero-headline">
+            SOFTWARE<br>
+            ENGINEER &<br>
+            PRODUCT BUILDER
+          </h1>
+
+          <div class="hero-tech-tags" aria-label="Core Specializations">
+            <span class="tech-tag">NEXT.JS</span>
+            <span class="tech-tag">NODE.JS</span>
+            <span class="tech-tag">POSTGRESQL</span>
+            <span class="tech-tag">SYSTEM DESIGN</span>
+          </div>
+
+          <!-- Framed Workspace Photo with Technical Corners -->
+          <div class="workspace-frame">
+            <span class="corner-bl" aria-hidden="true"></span>
+            <span class="corner-br" aria-hidden="true"></span>
+            <div class="workspace-img-wrapper">
+              <img 
+                src="assets/workspace.jpg" 
+                alt="Developer workspace with code on monitor, warm desk lamp and headphones" 
+                class="workspace-img"
+                width="480"
+                height="168"
+                fetchpriority="high"
+              >
+            </div>
+          </div>
+
+          <!-- Supporting Copy Under Photo -->
+          <div class="hero-quote">
+            <span class="quote-arrow" aria-hidden="true">→</span>
+            <p class="quote-text">
+              BASED IN INDIA,<br>
+              BUILDING DIGITAL PRODUCTS<br>
+              THAT SOLVE REAL PROBLEMS.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="hero-right">
+          <!-- Collab Badge -->
+          <div class="hero-collab-badge">
+            <span class="status-dot"></span>
+            <span>OPEN FOR COLLAB</span>
+          </div>
+
+          <!-- Index & Roles -->
+          <div class="hero-roles">
+            <span class="role-idx">01 /</span>
+            DEVELOPER<br>
+            DESIGNER<br>
+            BUILDER
+          </div>
+
+          <!-- Supporting Statement -->
+          <p class="hero-philosophy">
+            I BUILD SCALABLE, RELIABLE<br>
+            AND IMPACTFUL DIGITAL SYSTEMS.
+          </p>
+
+          <!-- Oversized Signature Headline -->
+          <div class="hero-name" aria-label="HARSHH">
+            HARSHH
+          </div>
+
+          <!-- Subtitle -->
+          <div class="hero-subline">
+            PERSONAL PORTFOLIO / 2026
+          </div>
+
+          <!-- CTA Pill Button -->
+          <a href="#projects" class="pill-btn hero-cta">
+            <span>VIEW PROJECTS</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Hero Bottom Bar -->
+      <div class="hero-footer-bar">
+        <!-- Interactive Theme Switch -->
+        <div class="theme-switch-wrapper" id="theme-toggle" role="button" tabindex="0" aria-label="Toggle dark mode">
+          <div class="theme-switch" aria-hidden="true">
+            <div class="theme-switch-knob"></div>
+          </div>
+          <span class="theme-switch-label">DARK MODE</span>
+        </div>
+
+        <!-- Coordinates -->
+        <div class="hero-coords">
+          <span>26.2158° N</span>
+          <span class="sep">|</span>
+          <span>78.1686° E</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         Rackyard — Core Team / Experience Feature
+         ====================================================================== -->
+    <section class="editorial-section container" id="rackyard" aria-labelledby="rackyard-heading">
+      <div class="section-header">
+        <div class="section-micro-title mono-micro">[ 01.1 / CORE EXPERIENCE ]</div>
+        <h2 class="section-title" id="rackyard-heading">RACKYARD.</h2>
+      </div>
+
+      <div class="rackyard-card">
+        <div class="rackyard-header">
+          <div class="rackyard-title-area">
+            <h3>RACKYARD CLOUD</h3>
+            <span class="rackyard-role-badge">
+              <span class="status-dot"></span>
+              Core Team Member
+            </span>
+          </div>
+          <a href="https://rackyard.cloud/" target="_blank" rel="noopener noreferrer" class="pill-btn">
+            <span>VISIT RACKYARD.CLOUD</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <p class="rackyard-quote">
+          “Contributing to an infrastructure hosting ecosystem focused on virtual servers, hosting services and developer infrastructure.”
+        </p>
+
+        <!-- Product Ecosystem Grid -->
+        <div class="rackyard-grid">
+          <div class="rackyard-item">
+            <div class="rackyard-item-header">
+              <span class="rackyard-item-title">VPS & VDS HOSTING</span>
+              <span class="mono-micro">COMPUTE</span>
+            </div>
+            <p class="rackyard-item-desc">
+              High-performance virtual private servers and virtual dedicated servers featuring transparent CPU, RAM, and NVMe tiering.
+            </p>
+          </div>
+
+          <div class="rackyard-item">
+            <div class="rackyard-item-header">
+              <span class="rackyard-item-title">MINECRAFT HOSTING</span>
+              <span class="mono-micro">GAMING</span>
+            </div>
+            <p class="rackyard-item-desc">
+              Low-latency, high-tick-rate gaming server infrastructure engineered for high-concurrency multiplayer communities.
+            </p>
+          </div>
+
+          <div class="rackyard-item">
+            <div class="rackyard-item-header">
+              <span class="rackyard-item-title">DISCORD BOT HOSTING</span>
+              <span class="mono-micro">RUNTIME</span>
+            </div>
+            <p class="rackyard-item-desc">
+              24/7 continuous bot runtimes with persistent volume storage, automatic restart resilience, and zero throttled pipes.
+            </p>
+          </div>
+
+          <div class="rackyard-item">
+            <div class="rackyard-item-header">
+              <span class="rackyard-item-title">LAVALINK NODES</span>
+              <span class="mono-micro">STREAMING</span>
+            </div>
+            <p class="rackyard-item-desc">
+              Dedicated standalone audio-streaming node hosting optimized for low memory overhead and high audio-stream fidelity.
+            </p>
+          </div>
+        </div>
+
+        <div class="rackyard-footer">
+          <div class="rackyard-locations">
+            <span class="mono-micro">INFRASTRUCTURE REGIONS:</span>
+            <span class="tech-tag">INDIA</span>
+            <span class="tech-tag">GERMANY</span>
+            <span class="tech-tag">USA</span>
+          </div>
+          <div class="mono-micro">
+            INFRASTRUCTURE / VIRTUALIZATION / SYSTEM RESILIENCE
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         About Me Section
+         ====================================================================== -->
+    <section class="editorial-section container" id="about" aria-labelledby="about-heading">
+      <div class="section-header">
+        <div class="section-micro-title mono-micro">[ 01 / BACKGROUND ]</div>
+        <h2 class="section-title" id="about-heading">
+          A LITTLE<br>
+          ABOUT ME.
+        </h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-left">
+          <p class="about-intro-text">
+            I'm a developer, product builder and curious learner who enjoys turning ideas into functional digital products.
+          </p>
+          <p class="about-body-text">
+            I work across web technologies, backend systems and infrastructure, with a focus on building scalable, practical and user-focused solutions. Whether architecting full-stack monorepos, engineering real-time audio systems, or deploying cloud hosting infrastructure, I approach every engineering problem with minimalism, rigorous type safety, and clean system boundaries.
+          </p>
+
+          <div class="about-highlights">
+            <div class="highlight-row">
+              <span class="highlight-num">01</span>
+              <div class="highlight-content">
+                <h4>FULL-STACK & SYSTEMS ENGINEERING</h4>
+                <p>Architecting multi-package monorepos, distributed version control prototypes, and high-performance backend APIs.</p>
+              </div>
+            </div>
+
+            <div class="highlight-row">
+              <span class="highlight-num">02</span>
+              <div class="highlight-content">
+                <h4>SMART INDIA HACKATHON & INNOVATION</h4>
+                <p>Built Kaarigar AI (SIH-90), an AI-driven Indian artisan marketplace bridging heritage craftsmanship with direct e-commerce.</p>
+              </div>
+            </div>
+
+            <div class="highlight-row">
+              <span class="highlight-num">03</span>
+              <div class="highlight-content">
+                <h4>INFRASTRUCTURE & CLOUD HOSTING</h4>
+                <p>Core Team Member at Rackyard, exploring server virtualization, game server topologies, and developer infrastructure.</p>
+              </div>
+            </div>
+
+            <div class="highlight-row">
+              <span class="highlight-num">04</span>
+              <div class="highlight-content">
+                <h4>OPEN SOURCE & CIVIC TECH</h4>
+                <p>Active open-source contributor and creator of civic legal platforms like Legal Rights Awareness Assistant during Hacktoberfest.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-right">
+          <div class="stack-column">
+            <div class="stack-column-title">CORE PHILOSOPHY</div>
+            <div class="stack-items">
+              <div class="stack-item">
+                <span class="stack-item-name">SWISS MINIMALISM</span>
+                <span class="stack-item-tag">FORM & CLARITY</span>
+              </div>
+              <p class="about-body-text" style="font-size: 0.85rem; margin-bottom: 1rem;">
+                No superfluous layers or generic eye-candy. Clear hierarchy, bold type, and honest functional design.
+              </p>
+
+              <div class="stack-item">
+                <span class="stack-item-name">ROBUST SYSTEMS</span>
+                <span class="stack-item-tag">ENGINEERING</span>
+              </div>
+              <p class="about-body-text" style="font-size: 0.85rem; margin-bottom: 1rem;">
+                Data models with strong relational integrity, type safety end-to-end, and predictable failure modes.
+              </p>
+
+              <div class="stack-item">
+                <span class="stack-item-name">AUTONOMY & CURIOSITY</span>
+                <span class="stack-item-tag">MINDSET</span>
+              </div>
+              <p class="about-body-text" style="font-size: 0.85rem; margin-bottom: 0;">
+                Constantly learning deeper into low-level systems, distributed architectures, and developer ergonomics.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         Selected Projects Section
+         ====================================================================== -->
+    <section class="editorial-section container" id="projects" aria-labelledby="projects-heading">
+      <div class="section-header">
+        <div class="section-micro-title mono-micro">[ 02 / SELECTED WORK ]</div>
+        <h2 class="section-title" id="projects-heading">
+          SELECTED<br>
+          PROJECTS.
+        </h2>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="project-filters" role="tablist" aria-label="Project category filters">
+        <button class="filter-btn active" data-filter="all" type="button" role="tab" aria-selected="true">ALL (6)</button>
+        <button class="filter-btn" data-filter="systems" type="button" role="tab" aria-selected="false">SYSTEMS & BACKEND</button>
+        <button class="filter-btn" data-filter="fullstack" type="button" role="tab" aria-selected="false">FULL-STACK & SAAS</button>
+        <button class="filter-btn" data-filter="ai" type="button" role="tab" aria-selected="false">AI & HACKATHONS</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid" id="projects-container">
+
+        <!-- Project 1: HostelOS -->
+        <article class="project-card" data-category="systems fullstack">
+          <div>
+            <div class="project-card-header">
+              <span class="project-meta-category">SYSTEMS ARCHITECTURE / MONOREPO</span>
+              <span class="project-status-badge">ACTIVE REPO</span>
+            </div>
+            
+            <h3 class="project-name">HostelOS</h3>
+            
+            <p class="project-desc">
+              Comprehensive end-to-end accommodation operating system architected for student housing. Features complaint triage, mess governance, QR-verified gatepass approvals, and room allocation engines.
+            </p>
+
+            <!-- Technical Editorial Preview Graphic -->
+            <div class="project-preview" aria-hidden="true">
+              <svg viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="10" width="380" height="100" rx="4" stroke="currentColor" stroke-opacity="0.2" stroke-dasharray="4 4"/>
+                <text x="30" y="40" fill="currentColor" font-family="monospace" font-size="11" font-weight="bold">HOSTELOS // MONOREPO SPEC</text>
+                <text x="30" y="65" fill="currentColor" font-family="monospace" font-size="9" opacity="0.6">apps/api [Fastify] ── packages/db [Prisma + Postgres] ── apps/mobile [Expo]</text>
+                <rect x="30" y="80" width="80" height="18" rx="9" fill="currentColor" fill-opacity="0.1"/>
+                <text x="42" y="93" fill="currentColor" font-family="monospace" font-size="8">GATEPASS v1.3</text>
+                <rect x="120" y="80" width="80" height="18" rx="9" fill="currentColor" fill-opacity="0.1"/>
+                <text x="135" y="93" fill="currentColor" font-family="monospace" font-size="8">ROOM-ALLOC</text>
+                <rect x="210" y="80" width="80" height="18" rx="9" fill="currentColor" fill-opacity="0.1"/>
+                <text x="228" y="93" fill="currentColor" font-family="monospace" font-size="8">MESS-LOG</text>
+              </svg>
+            </div>
+
+            <div class="project-tech-list">
+              <span class="tech-tag">FASTIFY</span>
+              <span class="tech-tag">POSTGRESQL</span>
+              <span class="tech-tag">PRISMA</span>
+              <span class="tech-tag">TYPESCRIPT</span>
+              <span class="tech-tag">REACT NATIVE</span>
+            </div>
+          </div>
+
+          <div class="project-card-footer">
+            <span class="project-ownership">OWNER & ARCHITECT</span>
+            <div class="project-links">
+              <a href="https://github.com/wtorque/HostelOS" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                <span>GITHUB REPO</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Kaarigar AI -->
+        <article class="project-card" data-category="ai fullstack">
+          <div>
+            <div class="project-card-header">
+              <span class="project-meta-category">SMART INDIA HACKATHON (SIH-90)</span>
+              <span class="project-status-badge live">● LIVE DEMO</span>
+            </div>
+            
+            <h3 class="project-name">Kaarigar AI</h3>
+            
+            <p class="project-desc">
+              AI-driven artisan marketplace designed and engineered for the Smart India Hackathon. Connects traditional Indian grassroots craftsmen with global buyers through automated AI cataloging and multilingual commerce.
+            </p>
+
+            <div class="project-preview" aria-hidden="true">
+              <svg viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="10" width="380" height="100" rx="4" stroke="currentColor" stroke-opacity="0.2"/>
+                <text x="30" y="40" fill="currentColor" font-family="monospace" font-size="11" font-weight="bold">KAARIGAR-AI // SIH-90 PIPELINE</text>
+                <text x="30" y="65" fill="currentColor" font-family="monospace" font-size="9" opacity="0.6">Artisan Craft Ingestion ── Vision Analysis ── Multilingual Commerce UI</text>
+                <circle cx="45" cy="90" r="6" fill="#15803D"/>
+                <text x="60" y="93" fill="currentColor" font-family="monospace" font-size="9">10/10 UNIT TESTS PASSING (VITEST)</text>
+              </svg>
+            </div>
+
+            <div class="project-tech-list">
+              <span class="tech-tag">NEXT.JS 16+</span>
+              <span class="tech-tag">REACT 19</span>
+              <span class="tech-tag">TAILWIND CSS v4</span>
+              <span class="tech-tag">TYPESCRIPT</span>
+              <span class="tech-tag">AI / ML</span>
+            </div>
+          </div>
+
+          <div class="project-card-footer">
+            <span class="project-ownership">TEAM LEAD & FULL-STACK</span>
+            <div class="project-links">
+              <a href="https://kaarigarproject.vercel.app" target="_blank" rel="noopener noreferrer" class="project-link-btn" style="color: var(--accent-green); border-color: var(--accent-green);">
+                <span>LIVE DEMO</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a href="https://github.com/wtorque/Kaarigar-AI" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                <span>GITHUB REPO</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: Pebble Ecosystem -->
+        <article class="project-card" data-category="systems">
+          <div>
+            <div class="project-card-header">
+              <span class="project-meta-category">DISTRIBUTED SYSTEMS / DEVELOPER TOOLS</span>
+              <span class="project-status-badge">ARCHITECTURAL BLUEPRINT</span>
+            </div>
+            
+            <h3 class="project-name">Pebble Ecosystem</h3>
+            
+            <p class="project-desc">
+              Next-generation developer collaboration ecosystem comprising PebbleNest (custom Rust VCS CLI), PebbleSpace (hosting & cloud collaboration engine), and PebbleLanding. Engineered with documented wire protocols.
+            </p>
+
+            <div class="project-preview" aria-hidden="true">
+              <svg viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="10" width="380" height="100" rx="4" stroke="currentColor" stroke-opacity="0.2"/>
+                <text x="30" y="40" fill="currentColor" font-family="monospace" font-size="11" font-weight="bold">PEBBLE // MONOREPO ARCHITECTURE</text>
+                <text x="30" y="65" fill="currentColor" font-family="monospace" font-size="9" opacity="0.6">PebbleNest [Rust CLI] ⟷ Wire Protocol ⟷ PebbleSpace [Cloud VCS]</text>
+                <text x="30" y="92" fill="currentColor" font-family="monospace" font-size="9" opacity="0.8">DOCKER-COMPOSE // RENDER.YAML DEPLOY SPEC</text>
+              </svg>
+            </div>
+
+            <div class="project-tech-list">
+              <span class="tech-tag">RUST</span>
+              <span class="tech-tag">TYPESCRIPT</span>
+              <span class="tech-tag">DOCKER</span>
+              <span class="tech-tag">VCS PROTOCOLS</span>
+              <span class="tech-tag">SYSTEM DESIGN</span>
+            </div>
+          </div>
+
+          <div class="project-card-footer">
+            <span class="project-ownership">OWNER & CORE DEVELOPER</span>
+            <div class="project-links">
+              <a href="https://github.com/wtorque/pebble" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                <span>GITHUB REPO</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: HospitalOS / OxicareOS -->
+        <article class="project-card" data-category="fullstack systems">
+          <div>
+            <div class="project-card-header">
+              <span class="project-meta-category">HEALTHTECH / ENTERPRISE PLATFORM</span>
+              <span class="project-status-badge">PRODUCTION PROTOTYPE</span>
+            </div>
+            
+            <h3 class="project-name">HospitalOS (OxicareOS)</h3>
+            
+            <p class="project-desc">
+              Enterprise clinical operating system designed with the UI elegance of Linear and Stripe. Engineered for healthcare professionals with patient queues, bed allocation, and multi-department triage management.
+            </p>
+
+            <div class="project-preview" aria-hidden="true">
+              <svg viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="10" width="380" height="100" rx="4" stroke="currentColor" stroke-opacity="0.2"/>
+                <text x="30" y="40" fill="currentColor" font-family="monospace" font-size="11" font-weight="bold">HOSPITAL OS V2 // CLINICAL SUITE</text>
+                <text x="30" y="65" fill="currentColor" font-family="monospace" font-size="9" opacity="0.6">Triage Queue ── Bed Occupancy Engine ── EHR Clinical Records</text>
+                <rect x="30" y="80" width="130" height="18" rx="4" fill="currentColor" fill-opacity="0.1"/>
+                <text x="40" y="93" fill="currentColor" font-family="monospace" font-size="8">POSTGRES + PRISMA</text>
+              </svg>
+            </div>
+
+            <div class="project-tech-list">
+              <span class="tech-tag">NEXT.JS 14</span>
+              <span class="tech-tag">EXPRESS.JS</span>
+              <span class="tech-tag">POSTGRESQL</span>
+              <span class="tech-tag">PRISMA</span>
+              <span class="tech-tag">TAILWIND CSS</span>
+            </div>
+          </div>
+
+          <div class="project-card-footer">
+            <span class="project-ownership">OWNER & FULL-STACK</span>
+            <div class="project-links">
+              <a href="https://github.com/wtorque/HospitalOS" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                <span>GITHUB REPO</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5: Legal Rights Awareness Assistant -->
+        <article class="project-card" data-category="ai">
+          <div>
+            <div class="project-card-header">
+              <span class="project-meta-category">OPEN SOURCE / CIVIC INTELLIGENCE</span>
+              <span class="project-status-badge">HACKTOBERFEST</span>
+            </div>
+            
+            <h3 class="project-name">Legal Rights Assistant</h3>
+            
+            <p class="project-desc">
+              AI-driven civic intelligence tool created to demystify Indian constitutional and statutory laws. Provides plain-language explanations of citizen rights, legal procedures, and actionable emergency resources.
+            </p>
+
+            <div class="project-preview" aria-hidden="true">
+              <svg viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="10" width="380" height="100" rx="4" stroke="currentColor" stroke-opacity="0.2"/>
+                <text x="30" y="40" fill="currentColor" font-family="monospace" font-size="11" font-weight="bold">LEGAL RIGHTS ASSISTANT // CIVIC NLP</text>
+                <text x="30" y="65" fill="currentColor" font-family="monospace" font-size="9" opacity="0.6">Statutory Corpus Search ── Natural Language Explanations</text>
+                <rect x="30" y="80" width="110" height="18" rx="4" fill="currentColor" fill-opacity="0.1"/>
+                <text x="40" y="93" fill="currentColor" font-family="monospace" font-size="8">CITIZEN AID / OPEN</text>
+              </svg>
+            </div>
+
+            <div class="project-tech-list">
+              <span class="tech-tag">TYPESCRIPT</span>
+              <span class="tech-tag">PYTHON</span>
+              <span class="tech-tag">CIVIC TECH</span>
+              <span class="tech-tag">LLM PIPELINE</span>
+              <span class="tech-tag">FULL-STACK</span>
+            </div>
+          </div>
+
+          <div class="project-card-footer">
+            <span class="project-ownership">CREATOR & MAINTAINER</span>
+            <div class="project-links">
+              <a href="https://github.com/wtorque/Legal_rights_awareness_assistant" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                <span>GITHUB REPO</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 6: Vexa Amplifier & Sound System -->
+        <article class="project-card" data-category="systems">
+          <div>
+            <div class="project-card-header">
+              <span class="project-meta-category">MULTIMEDIA / REAL-TIME STREAMING</span>
+              <span class="project-status-badge">ACTIVE DEVELOPMENT</span>
+            </div>
+            
+            <h3 class="project-name">Vexa Amplifier</h3>
+            
+            <p class="project-desc">
+              Low-latency real-time audio amplifier and streaming ecosystem consisting of a Fastify backend API, high-fidelity WebAudio processing pipelines, and a native Electron desktop client.
+            </p>
+
+            <div class="project-preview" aria-hidden="true">
+              <svg viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="10" width="380" height="100" rx="4" stroke="currentColor" stroke-opacity="0.2"/>
+                <text x="30" y="40" fill="currentColor" font-family="monospace" font-size="11" font-weight="bold">VEXA SOUND PIPELINE // LOW LATENCY</text>
+                <text x="30" y="65" fill="currentColor" font-family="monospace" font-size="9" opacity="0.6">Fastify Audio Server ⟷ WebAudio Node ⟷ Electron Client</text>
+                <path d="M 30 90 Q 60 70 90 90 T 150 90 T 210 90 T 270 90 T 330 90" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              </svg>
+            </div>
+
+            <div class="project-tech-list">
+              <span class="tech-tag">FASTIFY</span>
+              <span class="tech-tag">ELECTRON</span>
+              <span class="tech-tag">WEBAUDIO API</span>
+              <span class="tech-tag">TYPESCRIPT</span>
+              <span class="tech-tag">REST API</span>
+            </div>
+          </div>
+
+          <div class="project-card-footer">
+            <span class="project-ownership">CREATOR</span>
+            <div class="project-links">
+              <a href="https://github.com/wtorque/vexa-amp" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                <span>GITHUB REPO</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- More on GitHub Banner -->
+      <div class="github-banner">
+        <div class="github-banner-text">
+          <h4>EXPLORE ALL REPOSITORIES & SOURCE CODE</h4>
+          <p>Discover additional experiments, utility scripts, and ongoing developments on GitHub.</p>
+        </div>
+        <a href="https://github.com/wtorque?tab=repositories" target="_blank" rel="noopener noreferrer" class="pill-btn">
+          <span>GITHUB / WTORQUE</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         Technology Stack Section
+         ====================================================================== -->
+    <section class="editorial-section container" id="stack" aria-labelledby="stack-heading">
+      <div class="section-header">
+        <div class="section-micro-title mono-micro">[ 03 / CAPABILITIES ]</div>
+        <h2 class="section-title" id="stack-heading">
+          CORE STACK &<br>
+          TECHNOLOGIES.
+        </h2>
+      </div>
+
+      <div class="stack-grid">
+        <!-- Col 1: Frontend & UI -->
+        <div class="stack-column">
+          <div class="stack-column-title">FRONTEND & INTERACTION</div>
+          <div class="stack-items">
+            <div class="stack-item">
+              <span class="stack-item-name">Next.js (App Router)</span>
+              <span class="stack-item-tag">CORE FRAMEWORK</span>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item-name">React 19</span>
+              <span class="stack-item-tag">UI LIBRARY</span>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item-name">TypeScript</span>
+              <span class="stack-item-tag">STRICT TYPING</span>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item-name">Tailwind CSS (v4)</span>
+              <span class="stack-item-tag">STYLING</span>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item-name">HTML5 / Vanilla CSS</span>
+              <span class="stack-item-tag">STANDARDS</span>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item-name">Electron</span>
+              <span class="stack-item-tag">DESKTOP RUNTIME</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Backend & Systems -->
+        <div class="stack-column">
+          <div class="stack-column-title">BACKEND & RUNTIMES</div>
+          <div class="stack-items">
+            <div class="stack-item">
+              <span class="stack-item-name">Node.js</span>
+              <span class="stack-item-tag">RUNTIME</span>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item-name">Fastify</span>
+              <span class="stack-item-tag">HIGH-THROUGHPUT</span>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item-name">Express.js</span>
+              <span class="stack-item-tag">REST APIS</span>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item-name">Python</span>
+              <span class="stack-item-tag">SCRIPTING & AI</span>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item-name">WebSockets</span>
+              <span class="stack-item-tag">REAL-TIME PIPES</span>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item-name">Rust (PebbleNest)</span>
+              <span class="stack-item-tag">SYSTEMS CLI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 3: Databases & Storage -->
+        <div class="stack-column">
+          <div class="stack-column-title">DATABASES & PERSISTENCE</div>
+          <div class="stack-items">
+            <div class="stack-item">
+              <span class="stack-item-name">PostgreSQL</span>
+              <span class="stack-item-tag">RELATIONAL DB</span>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item-name">Prisma ORM</span>
+              <span class="stack-item-tag">SCHEMA MODELING</span>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item-name">MongoDB</span>
+              <span class="stack-item-tag">DOCUMENT STORE</span>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item-name">SQLite</span>
+              <span class="stack-item-tag">EMBEDDED DB</span>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item-name">SQL Modeling</span>
+              <span class="stack-item-tag">QUERY DESIGN</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 4: Infrastructure & Tools -->
+        <div class="stack-column">
+          <div class="stack-column-title">INFRASTRUCTURE & TOOLS</div>
+          <div class="stack-items">
+            <div class="stack-item">
+              <span class="stack-item-name">Rackyard Cloud</span>
+              <span class="stack-item-tag">VPS / VDS HOSTING</span>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item-name">Docker</span>
+              <span class="stack-item-tag">CONTAINERIZATION</span>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item-name">Git & GitHub</span>
+              <span class="stack-item-tag">VERSION CONTROL</span>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item-name">Vercel & Render</span>
+              <span class="stack-item-tag">DEPLOYMENT</span>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item-name">Figma</span>
+              <span class="stack-item-tag">UI/UX DESIGN</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         Education & Journey Timeline
+         ====================================================================== -->
+    <section class="editorial-section container" id="journey" aria-labelledby="journey-heading">
+      <div class="section-header">
+        <div class="section-micro-title mono-micro">[ 04 / BACKGROUND ]</div>
+        <h2 class="section-title" id="journey-heading">
+          EDUCATION &<br>
+          JOURNEY.
+        </h2>
+      </div>
+
+      <div class="timeline">
+        <!-- Item 1: Newton School of Technology -->
+        <div class="timeline-entry">
+          <div class="timeline-year">2024 — PRESENT</div>
+          <h3 class="timeline-title">Newton School of Technology (NST)</h3>
+          <div class="timeline-sub">B.Tech Computer Science & Engineering (AI / ML)</div>
+          <p class="timeline-desc">
+            Pursuing formal undergraduate engineering studies in Computer Science with a specialization in Artificial Intelligence and Machine Learning. Hands-on focus on systems engineering, software architecture, data structures, and algorithmic optimization.
+          </p>
+        </div>
+
+        <!-- Item 2: Rackyard Core Team -->
+        <div class="timeline-entry">
+          <div class="timeline-year">2026 — PRESENT</div>
+          <h3 class="timeline-title">Rackyard — Core Team Member</h3>
+          <div class="timeline-sub">Developer Infrastructure, Cloud Hosting & Virtual Servers</div>
+          <p class="timeline-desc">
+            Active involvement in the Rackyard hosting ecosystem. Contributing to high-performance virtual servers (VPS/VDS), game server hosting (Minecraft), Discord bot environments, and Lavalink streaming nodes spanning data centers in India, Germany, and the USA.
+          </p>
+        </div>
+
+        <!-- Item 3: Smart India Hackathon -->
+        <div class="timeline-entry">
+          <div class="timeline-year">2026</div>
+          <h3 class="timeline-title">Smart India Hackathon (SIH)</h3>
+          <div class="timeline-sub">Project: Kaarigar AI (SIH-90)</div>
+          <p class="timeline-desc">
+            Led the technical development of Kaarigar AI, a comprehensive marketplace system bridging traditional artisan craftsmanship with automated image recognition, catalog generation, and localized direct-to-consumer e-commerce.
+          </p>
+        </div>
+
+        <!-- Item 4: Open Source & Hacktoberfest -->
+        <div class="timeline-entry">
+          <div class="timeline-year">2026</div>
+          <h3 class="timeline-title">Open Source Contributions & Hacktoberfest</h3>
+          <div class="timeline-sub">Civic Tech & Developer Utilities</div>
+          <p class="timeline-desc">
+            Authored the Legal Rights Awareness Assistant to make Indian legal protections transparent for all citizens. Published open-source utilities and built developer collaboration hubs within the Torque developer community.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         Contact Section
+         ====================================================================== -->
+    <section class="editorial-section container" id="contact" aria-labelledby="contact-heading">
+      <div class="contact-grid">
+        <div class="contact-left">
+          <div class="section-micro-title mono-micro">[ 05 / GET IN TOUCH ]</div>
+          <h2 class="section-title" id="contact-heading">
+            HAVE AN IDEA?<br>
+            LET'S BUILD<br>
+            SOMETHING<br>
+            TOGETHER.
+          </h2>
+
+          <p class="contact-desc">
+            Whether you have an interesting systems engineering role, open-source collaboration, cloud infrastructure challenge, or product idea, my inbox is always open.
+          </p>
+
+          <!-- Direct Email Card -->
+          <div class="contact-card">
+            <div class="contact-card-label mono-micro">DIRECT INBOX:</div>
+            <div class="contact-email-val" id="email-text">wtorque@outlook.com</div>
+            <div class="contact-actions">
+              <button class="pill-btn" id="copy-email-btn" type="button" aria-label="Copy email address to clipboard">
+                <span>COPY EMAIL</span>
+              </button>
+              <a href="mailto:wtorque@outlook.com" class="pill-btn">
+                <span>OPEN EMAIL CLIENT</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+              <span class="copy-feedback" id="copy-feedback" aria-live="polite">COPIED TO CLIPBOARD ✓</span>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="social-links-list">
+            <a href="https://github.com/wtorque" target="_blank" rel="noopener noreferrer" class="pill-btn">
+              <span>GITHUB</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a href="https://linkedin.com/in/harsh-agre" target="_blank" rel="noopener noreferrer" class="pill-btn">
+              <span>LINKEDIN</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a href="https://discord.gg/Torque" target="_blank" rel="noopener noreferrer" class="pill-btn">
+              <span>DISCORD</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a href="https://instagram.com/hashu.xe" target="_blank" rel="noopener noreferrer" class="pill-btn">
+              <span>INSTAGRAM</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Inquiry Form (Pure Vanilla JavaScript) -->
+        <div class="contact-right">
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="mono-micro" style="margin-bottom: 1.25rem;">QUICK INQUIRY // MESSAGE DIRECTLY</div>
+
+            <div class="form-group">
+              <label for="form-name" class="form-label">YOUR NAME *</label>
+              <input type="text" id="form-name" class="form-input" placeholder="e.g. Alex Sharma" required>
+            </div>
+
+            <div class="form-group">
+              <label for="form-email" class="form-label">YOUR EMAIL ADDRESS *</label>
+              <input type="email" id="form-email" class="form-input" placeholder="e.g. alex@company.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="form-message" class="form-label">PROJECT / MESSAGE *</label>
+              <textarea id="form-message" class="form-textarea" placeholder="Tell me about what you're building or exploring..." required></textarea>
+            </div>
+
+            <button type="submit" class="pill-btn" style="width: 100%; padding: 0.75rem 1.25rem;">
+              <span>SEND INQUIRY</span>
+              <span aria-hidden="true">→</span>
+            </button>
+
+            <div class="form-status" id="form-status" role="alert"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       Site Footer
+       ======================================================================== -->
+  <footer class="site-footer container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        HARSHH<sup>®</sup>
+      </div>
+      <div class="mono-micro">
+        MINIMAL SWISS & EDITORIAL PORTFOLIO / CLASS OF 2026
+      </div>
+      <a href="#top" class="pill-btn" aria-label="Back to top">
+        <span>↑ TOP</span>
+      </a>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        © 2026 HARSHH. ALL RIGHTS RESERVED.
+      </div>
+      <div>
+        CRAFTED WITH VANILLA WEB STANDARDS / ZERO FRAMEWORKS
+      </div>
+      <div>
+        26.2158° N  |  78.1686° E
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       Mobile Navigation Drawer
+       ======================================================================== -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <span class="nav-brand">HARSHH<sup>®</sup></span>
+      <button class="drawer-close" id="drawer-close-btn" type="button" aria-label="Close menu">✕</button>
+    </div>
+
+    <nav class="drawer-nav">
+      <a href="#about" class="drawer-link"><span>[ 01 ]</span> ABOUT</a>
+      <a href="#projects" class="drawer-link"><span>[ 02 ]</span> PROJECTS</a>
+      <a href="#stack" class="drawer-link"><span>[ 03 ]</span> STACK</a>
+      <a href="#journey" class="drawer-link"><span>[ 04 ]</span> JOURNEY</a>
+      <a href="#contact" class="drawer-link"><span>[ 05 ]</span> CONTACT</a>
+    </nav>
+
+    <div class="drawer-footer">
+      <div class="theme-switch-wrapper" id="drawer-theme-toggle" role="button" tabindex="0">
+        <div class="theme-switch">
+          <div class="theme-switch-knob"></div>
+        </div>
+        <span class="theme-switch-label">DARK MODE</span>
+      </div>
+      <div class="mono-micro">
+        26.2158° N  |  78.1686° E // GWALIOR, INDIA
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
