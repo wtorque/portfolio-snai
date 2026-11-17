@@ -380,6 +380,73 @@
     });
   }
 
-  window.addEventListener('scroll', updateActiveNav, { passive: true });
+  // ==========================================================================
+  // 9. Minimalist Scroll Progress Bar
+  // ==========================================================================
+  const scrollProgressBar = document.getElementById('scroll-progress');
+  function updateScrollProgress() {
+    if (!scrollProgressBar) return;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    scrollProgressBar.style.width = `${scrollPercent}%`;
+  }
+
+  window.addEventListener('scroll', () => {
+    updateActiveNav();
+    updateScrollProgress();
+  }, { passive: true });
+
+  // ==========================================================================
+  // 10. Scroll Reveal Animation System (IntersectionObserver)
+  // ==========================================================================
+  const revealElements = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !prefersReducedMotion) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '0px 0px -40px 0px',
+      threshold: 0.08
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  } else {
+    revealElements.forEach(el => el.classList.add('in-view'));
+  }
+
+  // ==========================================================================
+  // 11. Smooth Anchor Scrolling with Header Compensation
+  // ==========================================================================
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#' || targetId === '#top') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        history.pushState(null, null, window.location.pathname);
+        return;
+      }
+
+      const targetEl = document.querySelector(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        const headerOffset = 64;
+        const elementPosition = targetEl.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+        history.pushState(null, null, targetId);
+      }
+    });
+  });
 
 })();
