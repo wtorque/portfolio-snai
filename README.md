@@ -110,9 +110,7 @@ harshh-portfolio/
 │   └── main.js
 │
 ├── assets/
-│   ├── images/
-│   ├── icons/
-│   └── fonts/
+│   ├── new.jpg
 │
 ├── README.md
 └── LICENSE

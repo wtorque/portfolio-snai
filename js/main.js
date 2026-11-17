@@ -242,17 +242,23 @@
   }
 
   // ==========================================================================
-  // 6. Interactive Quick Inquiry Form
+  // 6. Interactive Inquiry Form (Discord Webhook Integration)
   // ==========================================================================
   const contactForm = document.getElementById('contact-form');
   const formStatus = document.getElementById('form-status');
+  const submitBtn = contactForm ? contactForm.querySelector('button[type="submit"]') : null;
+  const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1572313002085064867/WitX3KO0kzQ2RU1gL6DF-V9Rgol-TOVdlGj5IL5Uu4TUB_nuwYZNBf_So1CkGhPyzisN';
 
   if (contactForm && formStatus) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const name = document.getElementById('form-name').value.trim();
-      const email = document.getElementById('form-email').value.trim();
-      const message = document.getElementById('form-message').value.trim();
+      const nameInput = document.getElementById('form-name');
+      const emailInput = document.getElementById('form-email');
+      const messageInput = document.getElementById('form-message');
+
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      const message = messageInput.value.trim();
 
       if (!name || !email || !message) {
         formStatus.textContent = 'Please fill out all required fields.';
@@ -261,18 +267,67 @@
         return;
       }
 
-      // Generate mailto link
-      const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
-      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-      const mailtoUrl = `mailto:wtorque@outlook.com?subject=${subject}&body=${body}`;
-
-      formStatus.textContent = 'Opening your email client to send message...';
-      formStatus.classList.add('success');
+      // UI Loading state
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.7';
+        submitBtn.querySelector('span').textContent = 'TRANSMITTING...';
+      }
+      formStatus.textContent = 'Dispatching inquiry to Discord...';
+      formStatus.style.color = 'var(--text-muted)';
       formStatus.style.display = 'block';
 
-      setTimeout(() => {
-        window.location.href = mailtoUrl;
-      }, 400);
+      const payload = {
+        username: 'Portfolio Inquiry Desk',
+        avatar_url: 'https://avatars.githubusercontent.com/u/256140343?v=4',
+        embeds: [
+          {
+            title: '📩 New Portfolio Contact Inquiry',
+            color: 1408805, // Emerald green #15803D
+            fields: [
+              { name: '👤 Sender Name', value: name, inline: true },
+              { name: '✉️ Email Address', value: email, inline: true },
+              { name: '📝 Message Body', value: message }
+            ],
+            footer: { text: 'HARSHH Portfolio • portfolio-snai' },
+            timestamp: new Date().toISOString()
+          }
+        ]
+      };
+
+      try {
+        const response = await fetch(DISCORD_WEBHOOK_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+          formStatus.textContent = 'INQUIRY SENT DIRECTLY VIA DISCORD WEBHOOK ✓ I WILL REPLY SOON.';
+          formStatus.style.color = 'var(--accent-green)';
+          contactForm.reset();
+        } else {
+          throw new Error(`Webhook error status: ${response.status}`);
+        }
+      } catch (err) {
+        console.warn('Webhook transmission issue, falling back to mail client:', err);
+        formStatus.textContent = 'Webhook blocked by network/CORS. Opening email client as backup...';
+        formStatus.style.color = 'var(--accent-green)';
+        
+        const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+        setTimeout(() => {
+          window.location.href = `mailto:wtorque@outlook.com?subject=${subject}&body=${body}`;
+        }, 600);
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.style.opacity = '1';
+          submitBtn.querySelector('span').textContent = 'SEND INQUIRY';
+        }
+      }
     });
   }
 
