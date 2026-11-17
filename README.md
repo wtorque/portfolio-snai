@@ -1,77 +1,139 @@
-# HARSHH — Personal Portfolio (`portfolio-snai`)
+# HARSHH® — Personal Portfolio
 
-> Minimal Swiss & editorial personal developer portfolio built with pure Vanilla Web standards (HTML5, CSS3, Vanilla JavaScript). Zero frameworks or heavy external libraries.
+A minimal, editorial-style personal portfolio showcasing my work, projects, technical interests, and journey as a software engineer and product builder.
 
-![Preview](assets/workspace.jpg)
-
----
-
-## ⚡ Overview
-
-Designed following strict minimalist Swiss typography, asymmetrical editorial layouts, and high-performance frontend practices.
-
-- **Warm Off-White Background**: `#F5F3ED` default editorial palette.
-- **Fine Grid System**: Subtle CSS linear-gradient background grid.
-- **High-Contrast Grotesque Typography**: Modern heavy sans-serif pairings with monospaced micro-labels.
-- **Interactive Handwritten Intro**: Pure SVG stroke-dashoffset handwriting animation drawing "hello".
-- **Real GitHub Data Integration**: Dynamic live repository star count via GitHub REST API.
-- **Rackyard Core Team Showcase**: Dedicated feature highlighting cloud infrastructure, VPS/VDS hosting, game servers, and global network footprints.
-- **Selected Project Blueprints**: In-depth cards for HostelOS, Kaarigar AI (SIH-90), Pebble Ecosystem, HospitalOS, Legal Rights Assistant, and Vexa Sound.
-- **Responsive & Accessible**: Complete support for desktop, tablet, and mobile with keyboard navigation and reduced-motion preferences.
+Designed with a focus on typography, simplicity, thoughtful interactions, and performance.
 
 ---
 
-## 📂 File Architecture
+## Overview
 
+HARSHH is my personal portfolio website, built using HTML, CSS, and Vanilla JavaScript.
+
+The design follows a Swiss editorial aesthetic with a warm neutral palette, oversized typography, subtle grid patterns, and carefully crafted animations.
+
+The experience begins with a handwritten SVG animation and transitions into the main portfolio.
+
+## Features
+
+- **Handwritten Intro** — Animated SVG handwriting effect.
+- **Editorial Design** — Minimal layouts, typography, and subtle grid backgrounds.
+- **Responsive Interface** — Optimized for desktop, tablet, and mobile.
+- **Project Showcase** — Selected projects with descriptions and technology stacks.
+- **About Section** — Personal introduction and development journey.
+- **Experience Timeline** — Education, hackathons, open-source, and team involvement.
+- **Technology Stack** — Overview of development tools and technologies.
+- **Contact Form** — Email integration with FormSubmit.
+- **Dark Mode** — Theme switching with preference persistence.
+- **Micro-interactions** — Smooth scrolling, hover effects, and scroll animations.
+- **Accessibility** — Keyboard navigation and reduced-motion support.
+
+## Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| HTML5 | Structure |
+| CSS3 | Styling and animations |
+| JavaScript | Interactions and functionality |
+| SVG | Handwritten intro animation |
+| FormSubmit | Contact form email delivery |
+| Git & GitHub | Version control |
+
+## Featured Projects
+
+The portfolio showcases selected projects, including:
+
+- **HostelOS** — A hostel operating system for managing hostel operations.
+- **OxicareOS** — A hospital operating system focused on healthcare workflows.
+- **Kaarigar** — An artisan marketplace and AI-powered cataloging concept.
+- **Torque** — A developer ecosystem focused on hosting and community tools.
+- **Omnicord** — A desktop communication application.
+- **Pebble** — An AI-assisted development tool concept.
+
+Project descriptions, repository links, and implementation details should reflect the actual project status.
+
+## Experience & Involvement
+
+### Rackyard — Core Team
+
+Part of the Rackyard Core Team, contributing to an infrastructure and hosting ecosystem.
+
+Website: https://rackyard.cloud/
+
+### Newton School of Technology
+
+B.Tech CSE (AI/ML)  
+Joined: 2026  
+Batch: Class of 2030
+
+### Open Source & Hackathons
+
+Interested in open-source development, collaborative engineering, hackathons, and building tools that solve practical problems.
+
+## Getting Started
+
+### Prerequisites
+
+- A modern web browser.
+- Git.
+- VS Code or any preferred code editor.
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/wtorque/harshh-portfolio.git
 ```
-portfolio-snai/
-├── assets/
-│   └── workspace.jpg       # Framed developer workspace photograph
+
+Navigate into the project:
+
+```bash
+cd harshh-portfolio
+```
+
+Open `index.html` in your browser.
+
+Alternatively, use the VS Code Live Server extension.
+
+## Project Structure
+
+```text
+harshh-portfolio/
+│
+├── index.html
+│
 ├── css/
-│   └── style.css           # Pure CSS3 custom properties, grid, themes & responsive breakpoints
+│   └── style.css
+│
 ├── js/
-│   └── main.js             # Vanilla JS: SVG animation, theme toggle, filters, clipboard, API
-├── index.html              # Semantic HTML5 document
-├── .gitignore
-└── README.md
+│   └── main.js
+│
+├── assets/
+│   ├── images/
+│   ├── icons/
+│   └── fonts/
+│
+├── README.md
+└── LICENSE
 ```
+
+## Contact
+
+**Harshh**
+
+- Email: wtorque@outlook.com
+- GitHub: https://github.com/wtorque
+- Website: Personal portfolio
+
+For project collaborations, technical discussions, or opportunities, feel free to reach out.
 
 ---
 
-## 🛠 Tech Stack
+## Philosophy
 
-- **HTML5**: Semantic tags, OpenGraph & SEO metadata, ARIA accessibility attributes.
-- **CSS3**: CSS custom properties, CSS Grid, Flexbox, keyframe animations, `@media (prefers-reduced-motion)`.
-- **Vanilla JavaScript (ES6+)**: Zero dependencies, SVG stroke calculations, IntersectionObserver, LocalStorage persistence.
+> Build things that solve real problems. Keep the experience simple. Make the engineering count.
 
----
+**HARSHH® — Personal Portfolio / 2026**
 
-## 🚀 Running Locally
-
-Clone the repository and serve using any local HTTP server:
-
-```bash
-git clone https://github.com/wtorque/portfolio-snai.git
-cd portfolio-snai
-```
-
-### Option 1: Python
-```bash
-python3 -m http.server 3000
-```
-
-### Option 2: Node.js (npx serve)
-```bash
-npx serve .
-```
-
-Open `http://localhost:3000` in your web browser.
-
----
-
-## 👤 Author
-
-- **Harshh** (wtorque)
-- **GitHub**: [@wtorque](https://github.com/wtorque)
-- **Email**: [wtorque@outlook.com](mailto:wtorque@outlook.com)
-- **LinkedIn**: [harsh-agre](https://linkedin.com/in/harsh-agre)
+Designed and developed with HTML, CSS & JavaScript.
